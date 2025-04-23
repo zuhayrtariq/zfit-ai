@@ -39,12 +39,14 @@ export function Header() {
   const { isSignedIn, isLoaded } = useUser();
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full z-50">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
           {/* <NavbarLogo /> */}
-          <NavLogo />
+          <div className="z-50">
+            <NavLogo />
+          </div>
           {isLoaded && (
             <>
               {isSignedIn ? (

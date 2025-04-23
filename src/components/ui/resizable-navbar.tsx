@@ -71,7 +71,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     <motion.div
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-      className={cn("fixed inset-x-0  z-40 w-full", className)}
+      className={cn("fixed inset-x-0   w-full", className)}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -105,7 +105,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex bg-transparent",
+        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex ",
         visible && " dark:bg-neutral-950/80",
         className
       )}
@@ -142,12 +142,6 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             />
           )}
 
-          {/* {pathName == item.link && (
-            <motion.div
-              layoutId="hovered"
-              className={`absolute  h-[4px] w-1/2 left-[25%] bottom-0 z-20  bg-primary `}
-            />
-          )} */}
           <span className="relative z-20">{item.name}</span>
         </Link>
       ))}
@@ -205,7 +199,6 @@ export const MobileNavMenu = ({
   children,
   className,
   isOpen,
-  onClose,
 }: MobileNavMenuProps) => {
   return (
     <AnimatePresence>
