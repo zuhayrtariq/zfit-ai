@@ -36,9 +36,8 @@ export default function RootLayout({
         >
           <NextTopLoader color="#18cef2" showSpinner={false} />
 
-          {/* <SmoothCursor /> */}
+          <SmoothCursor />
 
-          {/* <Navbar /> */}
           <Header />
 
           {/* GRID BACKGROUND */}
