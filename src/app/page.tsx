@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col min-h-screen text-foreground overflow-hidden px-2 md:px-16">
+    <div className="flex flex-col min-h-screen text-foreground overflow-hidden px-2 md:px-16 ">
       <div
         className={cn(
           "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none",
