@@ -10,8 +10,6 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { User, ZapIcon } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import NavLogo from "./NavLogo";
 import { usePathname } from "next/navigation";
