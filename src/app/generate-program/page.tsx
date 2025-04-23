@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { vapi } from "@/lib/vapi";
 import { useUser } from "@clerk/nextjs";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
@@ -162,9 +163,9 @@ const GenerateProgramPage = () => {
         </div>
 
         {/* VIDEO CALL AREA */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 ">
           {/* AI ASSISTANT CARD */}
-          <Card className="bg-card/90 backdrop-blur-sm border border-border overflow-hidden relative">
+          <Card className="bg-card/s90 flex items-center justify-center flex-col backdrop-blur-sm border border-border overflow-hidden relative ">
             <div className="aspect-video flex flex-col items-center justify-center p-6 relative">
               {/* AI VOICE ANIMATION */}
               <div
@@ -192,7 +193,7 @@ const GenerateProgramPage = () => {
               </div>
 
               {/* AI IMAGE */}
-              <div className="relative size-32 mb-4">
+              <div className="relative size-32 mb-4 ">
                 <div
                   className={`absolute inset-0 bg-primary opacity-10 rounded-full blur-lg ${
                     isSpeaking ? "animate-pulse" : ""
@@ -201,10 +202,11 @@ const GenerateProgramPage = () => {
 
                 <div className="relative w-full h-full rounded-full bg-card flex items-center justify-center border border-border overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-secondary/10"></div>
-                  <img
+                  <Image
                     src="/ai-avatar.png"
                     alt="AI Assistant"
                     className="w-full h-full object-cover"
+                    fill
                   />
                 </div>
               </div>
@@ -247,10 +249,11 @@ const GenerateProgramPage = () => {
             <div className="aspect-video flex flex-col items-center justify-center p-6 relative">
               {/* User Image */}
               <div className="relative size-32 mb-4">
-                <img
-                  src={user?.imageUrl}
+                <Image
+                  src={user?.imageUrl || "/user.png"}
                   alt="User"
                   // ADD THIS "size-full" class to make it rounded on all images
+                  fill
                   className="size-full object-cover rounded-full"
                 />
               </div>

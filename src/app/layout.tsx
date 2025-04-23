@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
 import ConvexClerkProvider from "@/providers/ConvexClerkProvider";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
+import NextTopLoader from "nextjs-toploader";
 
 import Footer from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -33,6 +34,10 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased `}
         >
+          <NextTopLoader color="#18cef2" showSpinner={false} />
+
+          {/* <SmoothCursor /> */}
+
           {/* <Navbar /> */}
           <Header />
 
